@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="page-container">
-      <div class="app-ui" (toggleSidenav)="toggleSidenav()">
+      <div class="app-ui">
         <sidebar>
         </sidebar>
         <div id="app-main">
@@ -48,10 +48,4 @@ import { Component } from '@angular/core';
 
   `]
 })
-export class AppComponent {
-  title = 'app works!';
-
-  toggleSidenav() {
-    console.log('app component toggle');
-  }
-}
+export class AppComponent { }

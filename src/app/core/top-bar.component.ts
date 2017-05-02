@@ -5,7 +5,7 @@ import {MenuService} from "./menu.service";
     selector: 'top-bar',
     template: `
       <button type="button" class="btn btn-default" aria-label="Left Align" (click)="toggle()">
-        <span class="glyphicon glyphicon glyphicon glyphicon-th" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
       </button>
 
     `,
