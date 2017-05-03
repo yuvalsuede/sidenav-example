@@ -41,8 +41,6 @@ export class TopbarComponent implements OnInit {
     return this.ms.IsMenuOpen;
   }
 
-  @Output() toggleSidenav:EventEmitter<any> = new EventEmitter();
-
   constructor(private ms:MenuService) { }
 
   ngOnInit() {}
