@@ -4,7 +4,7 @@ import {MenuService} from "./menu.service";
 @Component({
     selector: 'top-bar',
     template: `
-      <button type="button" class="btn btn-default" aria-label="Left Align" (click)="toggle()">
+      <button type="button" *ngIf="!IsOpen" class="btn btn-default" aria-label="Left Align" (click)="toggle()">
         <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
       </button>
 
@@ -37,11 +37,15 @@ import {MenuService} from "./menu.service";
 })
 export class TopbarComponent implements OnInit {
 
+  get IsOpen() {
+    return this.ms.IsMenuOpen;
+  }
+
   @Output() toggleSidenav:EventEmitter<any> = new EventEmitter();
 
   constructor(private ms:MenuService) { }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   toggle() {
 

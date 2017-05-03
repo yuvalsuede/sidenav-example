@@ -1,6 +1,11 @@
 # Sidebar Navigation
 
-An Angular4 Sidebar Navigation using Angular Animations & Service
+An Angular4 Sidebar Navigation using Angular Animations & Service[]: 
+Reference-style: 
+
+![alt text][example]
+
+[example]: src/assets/toggle.gif "Example"
  
 ## Components
 

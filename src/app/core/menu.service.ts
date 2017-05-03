@@ -19,4 +19,8 @@ export class MenuService {
   getToggleMenu(): Observable<any> {
     return this.subject.asObservable();
   }
+
+  get IsMenuOpen() {
+    return this.open;
+  }
 }
