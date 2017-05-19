@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {AuthenticationService} from "./shared/login.service";
 
 @Component({
   selector: 'app-root',
   template: `
     <div class="page-container">
       <div class="app-ui">
-        <sidebar>
+        <sidebar *ngIf="auth.isAuthenticated()">
         </sidebar>
         <div id="app-main">
-          <top-bar></top-bar>
+          <top-bar *ngIf="auth.isAuthenticated()"></top-bar>
+          <router-outlet></router-outlet>
         </div>
 
       </div>
@@ -48,4 +51,14 @@ import { Component } from '@angular/core';
 
   `]
 })
-export class AppComponent { }
+export class AppComponent {
+
+  constructor(
+    private route:ActivatedRoute,
+    private auth: AuthenticationService) {
+
+  }
+
+
+
+}

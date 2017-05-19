@@ -11,6 +11,10 @@ export class MenuService {
   private subject: Subject<boolean> = new Subject<boolean>();
   constructor() { }
 
+  resetMenu() {
+    this.open = false;
+  }
+
   setToggleMenu(): void {
     this.open = !this.open;
     this.subject.next(this.open);
@@ -23,4 +27,7 @@ export class MenuService {
   get IsMenuOpen() {
     return this.open;
   }
+
+
+
 }

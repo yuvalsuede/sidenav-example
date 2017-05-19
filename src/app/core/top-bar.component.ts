@@ -1,11 +1,17 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MenuService} from "./menu.service";
+import {AuthenticationService} from "../shared/login.service";
 
 @Component({
     selector: 'top-bar',
     template: `
+
       <button type="button" *ngIf="!IsOpen" class="btn btn-default" aria-label="Left Align" (click)="toggle()">
         <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+      </button>
+      
+       <button type="button" *ngIf="auth.isAuthenticated()" class="logout btn btn-default"  (click)="auth.logout()">
+        <span style="margin-right: 10px;">Logout</span><span class="glyphicon glyphicon-off" aria-hidden="true"></span>
       </button>
 
     `,
@@ -33,6 +39,9 @@ import {MenuService} from "./menu.service";
       .btn-default:hover {
           background: #eff0f1;
       }
+      .logout {
+        float: right;
+      }
     `]
 })
 export class TopbarComponent implements OnInit {
@@ -41,7 +50,7 @@ export class TopbarComponent implements OnInit {
     return this.ms.IsMenuOpen;
   }
 
-  constructor(private ms:MenuService) { }
+  constructor(private ms:MenuService, private auth:AuthenticationService) { }
 
   ngOnInit() {}
 

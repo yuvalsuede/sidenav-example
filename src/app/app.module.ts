@@ -8,15 +8,22 @@ import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import 'hammerjs';
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryDataService} from "./in-memory-data.service";
+import {RouterModule} from "@angular/router";
+import {LoginComponent} from "./pages/login/login.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+    LoginComponent
   ],
   imports: [
     BrowserModule,
 
     CoreModule.forRoot(),
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1500, passThruUnknownUrl :true }),
 
     AppRoutingModule,
 
