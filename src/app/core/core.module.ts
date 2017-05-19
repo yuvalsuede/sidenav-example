@@ -12,7 +12,7 @@ import {ProjectsService} from "../shared/projects.service";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 import {AppConfig} from "../app.config";
-import {AuthenticationService} from "../shared/login.service";
+import {AuthenticationService} from "../shared/auth.service";
 
 
 

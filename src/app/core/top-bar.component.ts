@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MenuService} from "./menu.service";
-import {AuthenticationService} from "../shared/login.service";
+import {AuthenticationService} from "../shared/auth.service";
 
 @Component({
     selector: 'top-bar',
@@ -50,7 +50,7 @@ export class TopbarComponent implements OnInit {
     return this.ms.IsMenuOpen;
   }
 
-  constructor(private ms:MenuService, private auth:AuthenticationService) { }
+  constructor(private ms:MenuService, public auth:AuthenticationService) { }
 
   ngOnInit() {}
 

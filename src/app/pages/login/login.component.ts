@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from "../../shared/login.service";
+import {AuthenticationService} from "../../shared/auth.service";
 
 @Component({
     moduleId: module.id,
@@ -417,7 +417,7 @@ import {AuthenticationService} from "../../shared/login.service";
 `]
 })
 export class LoginComponent implements OnInit {
-    constructor(private auth:AuthenticationService) { }
+    constructor(public auth:AuthenticationService) { }
 
     ngOnInit() { }
 
