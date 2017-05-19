@@ -5,36 +5,36 @@ import {AuthenticationService} from "../../shared/auth.service";
     moduleId: module.id,
     selector: 'login',
     template: `
-
-<div class="container">
-	<div class="row">
-		
-    <div class="pen-title">
-      <h1>Kanbangular</h1>
-    </div>
-    <div class="container">
-      <div class="card"></div>
-      <div class="card">
-        <h1 class="title">Login</h1>
-        <form>
-          <div class="input-container">
-            <input type="text" id="Username" required="required"/>
-            <label for="Username">Username</label>
-            <div class="bar"></div>
+      <div class="container">
+        <div class="row">
+          
+          <div class="pen-title">
+            <h1>Kanbangular</h1>
           </div>
-          <div class="input-container">
-            <input type="password" id="Password" required="required"/>
-            <label for="Password">Password</label>
-            <div class="bar"></div>
+          <div class="container">
+            <div class="card"></div>
+            <div class="card">
+              <h1 class="title">Login</h1>
+              <form>
+                <div class="input-container">
+                  <input #username type="text" id="Username"/>
+                  <label for="Username">Username</label>
+                  <div class="bar"></div>
+                </div>
+                <div class="input-container">
+                  <input #pass type="password" id="Password"/>
+                  <label for="Password">Password</label>
+                  <div class="bar"></div>
+                </div>
+                
+                <div class="button-container">
+                  <button (click)="login(username,pass)"><span>Go</span></button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="button-container">
-            <button (click)="auth.login()"><span>Go</span></button>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
-	</div>
-</div>
     `,
   styles: [`
 /* Pen Title */
@@ -417,6 +417,11 @@ import {AuthenticationService} from "../../shared/auth.service";
 `]
 })
 export class LoginComponent implements OnInit {
+
+    login(username,password) {
+      this.auth.login(username,password)
+    }
+
     constructor(public auth:AuthenticationService) { }
 
     ngOnInit() { }
