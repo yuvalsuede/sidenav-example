@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticationService} from "./shared/auth.service";
 
 @Component({
@@ -54,10 +54,14 @@ import {AuthenticationService} from "./shared/auth.service";
 export class AppComponent {
 
   constructor(
+    private router: Router,
     private route:ActivatedRoute,
     public auth: AuthenticationService) {
 
+    auth.handleAuthentication();
   }
+
+
 
 
 

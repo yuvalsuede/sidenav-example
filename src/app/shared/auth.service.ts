@@ -61,6 +61,10 @@ export class AuthenticationService {
 
 
   public handleAuthentication(): void {
-
+    if (!this.isAuthenticated()) {
+      this.router.navigate(['/login']);
+    }
   }
+
+
 }
