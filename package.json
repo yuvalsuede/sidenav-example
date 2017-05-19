@@ -1,5 +1,6 @@
 {
-  "name": "Kanbangular - An Angular4 Kanban board",
+  "name": "kanbangular",
+  "author": "Yuval Suede",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
